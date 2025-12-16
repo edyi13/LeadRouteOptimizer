@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace LeadRouteOptimizer.Application.Uploads.Commands
 {
-    public sealed class UploadLeadsHandler(
+    public class UploadLeadsHandler(
     ILeadCsvParser parser,
     IUploadBatchRepository uploadBatchRepo,
     ILeadRepository leadRepo,
@@ -33,7 +33,7 @@ namespace LeadRouteOptimizer.Application.Uploads.Commands
 
                 var lead = new Lead
                 {
-                    UploadBatch = batch, // EF will set FK
+                    UploadBatch = batch,
                     LeadName = (r.LeadName ?? string.Empty).Trim().Length == 0 ? "(missing)" : r.LeadName!.Trim(),
                     Street = r.Street?.Trim(),
                     City = r.City?.Trim(),

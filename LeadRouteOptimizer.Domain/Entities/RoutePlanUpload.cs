@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeadRouteOptimizer.Domain.Entities
+﻿namespace LeadRouteOptimizer.Domain.Entities
 {
-    public sealed class RoutePlanUpload
+    public class RoutePlanUpload
     {
         public Guid RoutePlanId { get; set; }
         public RoutePlan RoutePlan { get; set; } = default!;

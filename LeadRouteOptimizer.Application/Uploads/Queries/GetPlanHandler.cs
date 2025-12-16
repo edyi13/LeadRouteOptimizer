@@ -1,13 +1,8 @@
 ﻿using LeadRouteOptimizer.Application.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeadRouteOptimizer.Application.Uploads.Queries
 {
-    public sealed class GetPlanHandler(IRoutePlanRepository planRepo)
+    public class GetPlanHandler(IRoutePlanRepository planRepo)
     {
         public async Task<GetPlanResult?> HandleAsync(GetPlanQuery q, CancellationToken ct)
         {

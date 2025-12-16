@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace LeadRouteOptimizer.Infrastructure.Adapters
 {
-    internal sealed class CsvLeadParser : ILeadCsvParser
+    internal class CsvLeadParser : ILeadCsvParser
     {
         public async Task<CsvParseResult> ParseAsync(Stream csvStream, CancellationToken ct)
         {
@@ -28,13 +28,13 @@ namespace LeadRouteOptimizer.Infrastructure.Adapters
 
             var headers = csv.HeaderRecord?.ToList() ?? new List<string>();
 
-            // Required headers (case-insensitive)
+            // required headers that are case-insensitive
             RequireHeader(headers, "LeadName");
             RequireHeader(headers, "Latitude");
             RequireHeader(headers, "Longitude");
 
             var rows = new List<ParsedLeadRow>();
-            var rowNumber = 1; // data row counter (not including header)
+            var rowNumber = 1;
 
             while (await csv.ReadAsync())
             {

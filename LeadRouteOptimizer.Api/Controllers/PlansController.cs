@@ -7,7 +7,7 @@ namespace LeadRouteOptimizer.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public sealed class PlansController : ControllerBase
+    public class PlansController : ControllerBase
     {
         [HttpPost]
         public async Task<ActionResult<CreatePlanResult>> Create(

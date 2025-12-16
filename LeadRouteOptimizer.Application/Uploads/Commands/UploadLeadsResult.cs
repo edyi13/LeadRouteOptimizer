@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeadRouteOptimizer.Application.Uploads.Commands
 {
-    public sealed record UploadLeadsResult(
+    public record UploadLeadsResult(
         Guid UploadBatchId,
         int TotalRows,
         int ValidRows,

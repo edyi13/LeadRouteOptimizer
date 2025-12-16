@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeadRouteOptimizer.Domain.Services
+﻿namespace LeadRouteOptimizer.Domain.Services
 {
     public static class Haversine
     {
-        // returns distance in kilometers
+        /// <summary>
+        /// calculates the distance in kilometers between two geographic coordinates
+        /// harvesine formula works on a sphere, so the result is an approximation
+        /// https://en.wikipedia.org/wiki/Haversine_formula
+        /// </summary>
+        /// returns>The distance in kilometers</returns>
         public static decimal DistanceKm(decimal lat1, decimal lon1, decimal lat2, decimal lon2)
         {
             const double R = 6371.0; // planet earth radius km

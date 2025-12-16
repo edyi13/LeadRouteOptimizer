@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeadRouteOptimizer.Domain.Entities
+﻿namespace LeadRouteOptimizer.Domain.Entities
 {
-    public sealed class RoutePlan
+    public class RoutePlan
     {
         public Guid Id { get; set; }
 

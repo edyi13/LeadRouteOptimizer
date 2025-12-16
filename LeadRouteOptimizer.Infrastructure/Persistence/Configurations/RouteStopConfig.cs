@@ -1,15 +1,10 @@
 ﻿using LeadRouteOptimizer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeadRouteOptimizer.Infrastructure.Persistence.Configurations
 {
-    internal sealed class RouteStopConfig : IEntityTypeConfiguration<RouteStop>
+    internal class RouteStopConfig : IEntityTypeConfiguration<RouteStop>
     {
         public void Configure(EntityTypeBuilder<RouteStop> b)
         {

@@ -1,6 +1,6 @@
 ﻿namespace LeadRouteOptimizer.Api.Contracts
 {
-    public sealed class CreatePlanRequest
+    public class CreatePlanRequest
     {
         public decimal HomeLatitude { get; set; }
         public decimal HomeLongitude { get; set; }

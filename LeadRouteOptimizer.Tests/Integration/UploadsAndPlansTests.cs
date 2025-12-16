@@ -4,7 +4,7 @@ using FluentAssertions;
 
 namespace LeadRouteOptimizer.Tests.Integration
 {
-    public sealed class UploadsAndPlansTests : IClassFixture<TestAppFactory>
+    public class UploadsAndPlansTests : IClassFixture<TestAppFactory>
     {
         private readonly HttpClient _client;
 
@@ -16,7 +16,7 @@ namespace LeadRouteOptimizer.Tests.Integration
         [Fact]
         public async Task Upload_manager_and_personal_then_create_plan_returns_stops()
         {
-            // Integration test: exercises HTTP pipeline + EF + SQL.
+            // integration test that covers upload and plan creation end to end
 
             var managerId = await UploadAsync("Manager", Path.Combine(AppContext.BaseDirectory, "TestData", "manager.csv"));
             var personalId = await UploadAsync("Personal", Path.Combine(AppContext.BaseDirectory, "TestData", "personal.csv"));
@@ -64,10 +64,10 @@ namespace LeadRouteOptimizer.Tests.Integration
             return json.UploadBatchId;
         }
 
-        private sealed record UploadResponse(Guid UploadBatchId, int TotalRows, int ValidRows, int InvalidRows);
-        private sealed record CreatePlanResponse(Guid PlanId, int Stops, decimal TotalDistanceKm);
-        private sealed record GetPlanResponse(Guid PlanId, decimal TotalDistanceKm, List<Stop> Stops);
-        private sealed record Stop(int Sequence, Guid LeadId, string LeadName, decimal LegDistanceKm);
+        private record UploadResponse(Guid UploadBatchId, int TotalRows, int ValidRows, int InvalidRows);
+        private record CreatePlanResponse(Guid PlanId, int Stops, decimal TotalDistanceKm);
+        private record GetPlanResponse(Guid PlanId, decimal TotalDistanceKm, List<Stop> Stops);
+        private record Stop(int Sequence, Guid LeadId, string LeadName, decimal LegDistanceKm);
     }
 
 }

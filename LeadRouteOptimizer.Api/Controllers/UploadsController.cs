@@ -6,7 +6,7 @@ namespace LeadRouteOptimizer.Api.Endpoints
 {
     [ApiController]
     [Route("[controller]")]
-    public sealed class UploadsController : ControllerBase
+    public class UploadsController : ControllerBase
     {
         [HttpPost]
         [Consumes("multipart/form-data")]

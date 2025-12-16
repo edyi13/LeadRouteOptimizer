@@ -1,15 +1,10 @@
 ﻿using LeadRouteOptimizer.Application.Interfaces;
 using LeadRouteOptimizer.Domain.Entities;
 using LeadRouteOptimizer.Domain.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeadRouteOptimizer.Application.Plans.Commands
 {
-    public sealed class CreatePlanHandler(
+    public class CreatePlanHandler(
         ILeadRepository leadRepo,
         IRoutePlanRepository planRepo,
         IUnitOfWork uow)
@@ -25,8 +20,7 @@ namespace LeadRouteOptimizer.Application.Plans.Commands
 
             var leads = await leadRepo.GetValidLeadsByUploadBatchIdsAsync(cmd.UploadBatchIds, ct);
 
-            // Dedupe across batches (simple): by NormalizedKey, first wins.
-            // If you want "Manager wins", do it later in roadmap.
+            // dedupe by normalized key
             var distinct = leads
                 .GroupBy(l => l.NormalizedKey)
                 .Select(g => g.First())
@@ -43,7 +37,7 @@ namespace LeadRouteOptimizer.Application.Plans.Commands
                 CreatedAtUtc = DateTime.UtcNow
             };
 
-            // Link uploads used
+            // link uploads to plan
             foreach (var uploadId in cmd.UploadBatchIds.Distinct())
             {
                 plan.RoutePlanUploads.Add(new RoutePlanUpload
@@ -53,7 +47,7 @@ namespace LeadRouteOptimizer.Application.Plans.Commands
                 });
             }
 
-            // Build route: nearest neighbor
+            // build route using nearest neighbor heuristic
             var remaining = new HashSet<Guid>(distinct.Select(l => l.Id));
             var lookup = distinct.ToDictionary(l => l.Id);
 
@@ -73,7 +67,7 @@ namespace LeadRouteOptimizer.Application.Plans.Commands
                     var lead = lookup[id];
                     var d = Haversine.DistanceKm(currLat, currLon, lead.Latitude, lead.Longitude);
 
-                    // Tie-breaker: stable-ish
+                    // tie-breaker on Guid to ensure deterministic results
                     if (d < bestDist || (d == bestDist && id.CompareTo(bestId) < 0))
                     {
                         bestDist = d;

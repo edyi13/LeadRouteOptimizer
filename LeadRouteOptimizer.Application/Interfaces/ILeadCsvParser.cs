@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeadRouteOptimizer.Application.Interfaces
+﻿namespace LeadRouteOptimizer.Application.Interfaces
 {
     public interface ILeadCsvParser
     {
         Task<CsvParseResult> ParseAsync(Stream csvStream, CancellationToken ct);
     }
 
-    public sealed record CsvParseResult(
+    public record CsvParseResult(
         IReadOnlyList<ParsedLeadRow> Rows,
         IReadOnlyList<string> HeaderNames
     );
 
-    public sealed record ParsedLeadRow(
+    public record ParsedLeadRow(
         int RowNumber,
         string? LeadName,
         decimal? Latitude,
@@ -25,6 +19,6 @@ namespace LeadRouteOptimizer.Application.Interfaces
         string? City,
         string? State,
         string? Zip,
-        string Raw // raw row representation for debug/audit
+        string Raw
     );
 }
