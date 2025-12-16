@@ -1,0 +1,6 @@
+@LeadRouteOptimizer.Api_HostAddress = http://localhost:5217
+
+GET {{LeadRouteOptimizer.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

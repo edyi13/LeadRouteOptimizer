@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadRouteOptimizer.Application", "LeadRouteOptimizer.Application\LeadRouteOptimizer.Application.csproj", "{9D9D1AA4-A104-4A9D-A86F-A2A1A9063200}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadRouteOptimizer.Domain", "LeadRouteOptimizer.Domain\LeadRouteOptimizer.Domain.csproj", "{3F60678F-41C5-4B61-9427-15DD15539D6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadRouteOptimizer.Infrastructure", "LeadRouteOptimizer.Infrastructure\LeadRouteOptimizer.Infrastructure.csproj", "{05F51AD0-BCAC-453A-9D81-9052735289FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadRouteOptimizer.Api", "LeadRouteOptimizer.Api\LeadRouteOptimizer.Api.csproj", "{F967DD18-427E-4CFF-9C53-24CEA7253816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadRouteOptimizer.Tests", "LeadRouteOptimizer.Tests\LeadRouteOptimizer.Tests.csproj", "{08599EDC-9057-4867-9F16-83EC86D0B81C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4D31317B-BFA1-4F20-BF6A-2C0D60FFD7C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F03C4C5F-8C1E-4D47-8767-967954FA7B66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{54F3DF66-B9FF-4627-90CA-A5AC5C6F6ABA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8C61785E-7C9C-41F3-BB87-53992DAF2AE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D9D1AA4-A104-4A9D-A86F-A2A1A9063200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D9D1AA4-A104-4A9D-A86F-A2A1A9063200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D9D1AA4-A104-4A9D-A86F-A2A1A9063200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D9D1AA4-A104-4A9D-A86F-A2A1A9063200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F60678F-41C5-4B61-9427-15DD15539D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F60678F-41C5-4B61-9427-15DD15539D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F60678F-41C5-4B61-9427-15DD15539D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F60678F-41C5-4B61-9427-15DD15539D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F51AD0-BCAC-453A-9D81-9052735289FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F51AD0-BCAC-453A-9D81-9052735289FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F51AD0-BCAC-453A-9D81-9052735289FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F51AD0-BCAC-453A-9D81-9052735289FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F967DD18-427E-4CFF-9C53-24CEA7253816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F967DD18-427E-4CFF-9C53-24CEA7253816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F967DD18-427E-4CFF-9C53-24CEA7253816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F967DD18-427E-4CFF-9C53-24CEA7253816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08599EDC-9057-4867-9F16-83EC86D0B81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08599EDC-9057-4867-9F16-83EC86D0B81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08599EDC-9057-4867-9F16-83EC86D0B81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08599EDC-9057-4867-9F16-83EC86D0B81C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D9D1AA4-A104-4A9D-A86F-A2A1A9063200} = {F03C4C5F-8C1E-4D47-8767-967954FA7B66}
+		{3F60678F-41C5-4B61-9427-15DD15539D6C} = {54F3DF66-B9FF-4627-90CA-A5AC5C6F6ABA}
+		{05F51AD0-BCAC-453A-9D81-9052735289FE} = {4D31317B-BFA1-4F20-BF6A-2C0D60FFD7C0}
+		{F967DD18-427E-4CFF-9C53-24CEA7253816} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{08599EDC-9057-4867-9F16-83EC86D0B81C} = {8C61785E-7C9C-41F3-BB87-53992DAF2AE1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36185B7C-D3BC-45BB-9548-CF19280DFD13}
+	EndGlobalSection
+EndGlobal
